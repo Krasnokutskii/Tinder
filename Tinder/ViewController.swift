@@ -16,15 +16,18 @@ class ViewController: UIViewController {
         view1.backgroundColor = .yellow
         
         let view2 = UIView()
-        view1.backgroundColor = .blue
+        view2.backgroundColor = .blue
         
         let view3 = UIView()
-        view1.backgroundColor = .green
+        view3.backgroundColor = .red
      
-        let stackView = UIStackView(arrangedSubviews: [view3, view2, view1])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        let stackView = UIStackView(arrangedSubviews: [view1,view2,view3])
         stackView.axis = .vertical
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
+        stackView.alignment = .fill
+        //stackView.spacing = 5
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+
         
         view.addSubview(stackView)
         
