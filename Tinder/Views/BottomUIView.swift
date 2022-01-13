@@ -9,11 +9,11 @@ import UIKit
 
 class BottomUIView: UIView {
 
-    let reloadView = BottomButtonsView(frame: .zero, width: 50, imageName: "nope")
-    let nopeView = BottomButtonsView(frame: .zero, width: 60, imageName: "restart")
-    let superLikeView = BottomButtonsView(frame: .zero, width: 50, imageName: "nope")
-    let likeView = BottomButtonsView(frame: .zero, width: 60, imageName: "restart")
-    let boostView = BottomButtonsView(frame: .zero, width: 50, imageName: "nope")
+    let reloadView = BottomButtonsView(frame: .zero, width: 50, imageSystemName: "gobackward", color: .systemYellow)
+    let nopeView = BottomButtonsView(frame: .zero, width: 60, imageSystemName: "multiply",color: .red)
+    let superLikeView = BottomButtonsView(frame: .zero, width: 50, imageSystemName: "star.fill", color: .blue)
+    let likeView = BottomButtonsView(frame: .zero, width: 60, imageSystemName: "heart.fill", color: .green)
+    let boostView = BottomButtonsView(frame: .zero, width: 50, imageSystemName: "bolt.fill", color: .purple)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,10 +40,13 @@ class BottomButtonsView: UIButton{
     
     var button: BottomButton?
     
-    init(frame: CGRect, width: CGFloat, imageName: String) {
+    init(frame: CGRect, width: CGFloat, imageSystemName: String, color: UIColor) {
         super .init(frame: frame)
         button = BottomButton(type: .custom)
-         button?.setImage( UIImage(named: imageName)?.resize(size: .init(width: width * 0.4, height: width * 0.4)), for: .normal)
+        //button?.setImage( UIImage(named: imageName)?.resize(size: .init(width: width * 0.4, height: width * 0.4)), for: .normal)
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: width * 0.4)
+        button?.setImage(UIImage(systemName: imageSystemName, withConfiguration: imageConfig), for: .normal)
+        button?.tintColor = color
         button?.translatesAutoresizingMaskIntoConstraints = false
         button?.backgroundColor = .white
         button?.layer.cornerRadius = width/2
