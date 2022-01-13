@@ -12,16 +12,15 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let view1 = UIView()
-        view1.backgroundColor = .yellow
+        let view1 = TopControlView()
         
         let view2 = UIView()
         view2.backgroundColor = .blue
         
-        let view3 = BottomUIView()
+        let BottomControlView = BottomUIView()
         
      
-        let stackView = UIStackView(arrangedSubviews: [view1, view2, view3])
+        let stackView = UIStackView(arrangedSubviews: [view1, view2, BottomControlView])
         stackView.axis = .vertical
         //stackView.distribution = .fillEqually
         stackView.alignment = .fill
@@ -33,7 +32,7 @@ class MainViewController: UIViewController {
         
         [
             view1.heightAnchor.constraint(equalToConstant: (view.frame.height / 8)),
-            view3.heightAnchor.constraint(equalToConstant: (view.frame.height / 8)),
+            BottomControlView.heightAnchor.constraint(equalToConstant: (view.frame.height / 8)),
          stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
          stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
          stackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),

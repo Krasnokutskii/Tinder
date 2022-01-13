@@ -9,17 +9,17 @@ import UIKit
 
 class BottomUIView: UIView {
 
+    let reloadView = BottomButtonsView(frame: .zero, width: 50, imageName: "nope")
+    let nopeView = BottomButtonsView(frame: .zero, width: 60, imageName: "restart")
+    let superLikeView = BottomButtonsView(frame: .zero, width: 50, imageName: "nope")
+    let likeView = BottomButtonsView(frame: .zero, width: 60, imageName: "restart")
+    let boostView = BottomButtonsView(frame: .zero, width: 50, imageName: "nope")
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .purple
-        
-        let view1 = BottomButtonsView(frame: .zero, width: 50, imageName: "nope")
-        let view2 = BottomButtonsView(frame: .zero, width: 60, imageName: "restart")
-        let view3 = BottomButtonsView(frame: .zero, width: 50, imageName: "nope")
-        let view4 = BottomButtonsView(frame: .zero, width: 60, imageName: "restart")
-        let view5 = BottomButtonsView(frame: .zero, width: 50, imageName: "nope")
-        
-        let stackView = UIStackView(arrangedSubviews: [view1, view2, view3, view4, view5])
+    
+        let stackView = UIStackView(arrangedSubviews: [reloadView, nopeView, superLikeView, likeView, boostView])
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.spacing = 10
