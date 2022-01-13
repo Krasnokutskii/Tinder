@@ -27,10 +27,6 @@ class BottomUIView: UIView {
         addSubview(stackView)
         
         stackView.anchors(top: topAnchor,bottom: bottomAnchor ,left: leftAnchor,right: rightAnchor, leftPudding: 10, rightPudding: 10)
-//        [stackView.topAnchor.constraint(equalTo: topAnchor),
-//         stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-//         stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
-//         stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),].forEach{ $0.isActive = true }
         
     }
     
@@ -58,11 +54,7 @@ class BottomButtonsView: UIButton{
         button?.layer.shadowRadius = 15
         
         addSubview(button!)
-        
-        [button?.centerXAnchor.constraint(equalTo: centerXAnchor),
-         button?.centerYAnchor.constraint(equalTo: centerYAnchor),
-         button?.widthAnchor.constraint(equalToConstant: width),
-         button?.heightAnchor.constraint(equalToConstant: width)].forEach{ $0?.isActive = true}
+        button?.anchors(centerX: centerXAnchor, centerY: centerYAnchor, width: width, height: width)
     }
     
     required init?(coder: NSCoder) {

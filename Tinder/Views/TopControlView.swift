@@ -20,7 +20,6 @@ class TopControlView: UIView{
     static private func createTopButton(imageName: String)-> UIButton{
         let button = UIButton(type: .custom)
         let imageConfig = UIImage.SymbolConfiguration(pointSize: 72)
-        //let colorConfig = UIImage.SymbolConfiguration.configurationPreferringMulticolor() // change Color here
         button.setImage(UIImage.init(systemName: imageName ,withConfiguration: imageConfig), for: .normal)
         button.setImage(UIImage.init(systemName: imageName ,withConfiguration: imageConfig), for: .selected)
         button.imageView?.contentMode = .scaleAspectFit
