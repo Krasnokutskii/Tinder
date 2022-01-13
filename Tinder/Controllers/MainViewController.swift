@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
         view.addSubview(stackView)
         
         [
-            view1.heightAnchor.constraint(equalToConstant: (view.frame.height / 8)),
+            view1.heightAnchor.constraint(equalToConstant: (view.frame.height / 9)),
             BottomControlView.heightAnchor.constraint(equalToConstant: (view.frame.height / 8)),
          stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
          stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),

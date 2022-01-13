@@ -17,7 +17,7 @@ class BottomUIView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .purple
+        backgroundColor = .white
     
         let stackView = UIStackView(arrangedSubviews: [reloadView, nopeView, superLikeView, likeView, boostView])
         stackView.axis = .horizontal

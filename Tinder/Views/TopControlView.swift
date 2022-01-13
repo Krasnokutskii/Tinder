@@ -40,7 +40,7 @@ class TopControlView: UIView{
     }
     
     private func setUpLayout(){
-        backgroundColor = .purple
+        backgroundColor = .white
         
         let stackView = UIStackView(arrangedSubviews: [tinderButton, goodButton, commentButton, profileButton])
         stackView.axis = .horizontal
@@ -57,24 +57,37 @@ class TopControlView: UIView{
     
     private func setUpBindings(){
         tinderButton.rx.tap
-            .subscribe { _ in
-            self.handleSelection(selectedButton: self.tinderButton)
-        }.disposed(by: disposeBag)
+            .asDriver()
+            .drive(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.handleSelection(selectedButton: self.tinderButton)
+            })
+            .disposed(by: disposeBag)
         
         goodButton.rx.tap
-            .subscribe { _ in
+            .asDriver()
+            .drive(onNext: { [weak self] _ in
+                guard let self = self else { return }
                 self.handleSelection(selectedButton: self.goodButton)
-        }.disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
+            
         
         commentButton.rx.tap
-            .subscribe { _ in
+            .asDriver()
+            .drive(onNext: { [weak self] _ in
+                guard let self = self else { return }
                 self.handleSelection(selectedButton: self.commentButton)
-        }.disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
         
         profileButton.rx.tap
-            .subscribe { _ in
+            .asDriver()
+            .drive(onNext: {[weak self] _ in
+                guard let self = self else { return }
                 self.handleSelection(selectedButton: self.profileButton)
-        }.disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
         
 
     }
