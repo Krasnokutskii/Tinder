@@ -26,10 +26,11 @@ class BottomUIView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stackView)
         
-        [stackView.topAnchor.constraint(equalTo: topAnchor),
-         stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-         stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
-         stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),].forEach{ $0.isActive = true }
+        stackView.anchors(top: topAnchor,bottom: bottomAnchor ,left: leftAnchor,right: rightAnchor, leftPudding: 10, rightPudding: 10)
+//        [stackView.topAnchor.constraint(equalTo: topAnchor),
+//         stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+//         stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
+//         stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),].forEach{ $0.isActive = true }
         
     }
     
