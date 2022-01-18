@@ -56,6 +56,34 @@ class CardView: UIView{
         return button
     }()
     
+    let goodLabel: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 45)
+        label.textColor = UIColor.rgb(red: 137, green: 223, blue: 86)
+        label.text = "GOOD"
+        
+        label.layer.borderWidth = 2
+        label.layer.cornerRadius = 10
+        label.layer.borderColor = UIColor.rgb(red: 137, green: 223, blue: 86).cgColor
+        
+        label.textAlignment = .center
+        return label
+    }()
+    
+    let nopeLabel: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 45)
+        label.textColor = UIColor.rgb(red: 222, green: 110, blue: 110)
+        label.text = "NOPE"
+        
+        label.layer.borderWidth = 2
+        label.layer.cornerRadius = 10
+        label.layer.borderColor = UIColor.rgb(red: 222, green: 110, blue: 110).cgColor
+        
+        label.textAlignment = .center
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         //backgroundColor = .white
@@ -70,26 +98,30 @@ class CardView: UIView{
     
     @objc private func panCardView(gesture: UIPanGestureRecognizer){
         let translation = gesture.translation(in: self)
-        
         if gesture.state == .changed{
-           // handlePanGesture(translation: translation)
-            self.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
-
+            handlePanGesture(translation: translation)
         }
         
         if gesture.state == .ended{
-            UIView.animate(withDuration: 0.3) {
-                self.transform = .identity
-            }
+            handlePanEnded()
         }
     }
     
-//    private func handlePanGesture(translation: CGPoint ){
-//
-//        let degree = translation.x / 20
-//        let angle =
-//        self.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
-//    }
+    private func handlePanGesture(translation: CGPoint ){
+        
+        let degree = translation.x / 10
+        let angle = degree * CGFloat.pi/180
+        let rotationTranslation = CGAffineTransform(rotationAngle: angle)
+        self.transform = rotationTranslation.translatedBy(x: translation.x, y: translation.y)
+    }
+    
+    private func handlePanEnded(){
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: []) {
+            self.transform = .identity
+            self.layoutIfNeeded()
+        }
+
+    }
     
     private func setUpLayout(){
         
@@ -101,12 +133,15 @@ class CardView: UIView{
         addSubview(cardImageView)
         addSubview(nameLabel)
         addSubview(basicHorizontalStack)
-        
+        addSubview(goodLabel)
+        addSubview(nopeLabel)
         
         cardImageView.anchors(top: topAnchor, bottom: bottomAnchor, left: leftAnchor, right: rightAnchor, leftPudding: 10, rightPudding: 10)
         nameLabel.anchors(bottom: basicHorizontalStack.topAnchor, left: cardImageView.leftAnchor, bottomPudding: 40, leftPudding: 20)
         infoButton.anchors(width: 40)
         basicHorizontalStack.anchors(bottom: cardImageView.bottomAnchor, left: cardImageView.leftAnchor, right: cardImageView.rightAnchor, bottomPudding: 20, leftPudding: 20, rightPudding: 20)
+        goodLabel.anchors(top: cardImageView.topAnchor, left: cardImageView.leftAnchor, topPudding: 20, leftPudding: 20)
+        nopeLabel.anchors(top: cardImageView.topAnchor, right: cardImageView.rightAnchor, topPudding: 20, rightPudding: 20)
     }
     
 }
