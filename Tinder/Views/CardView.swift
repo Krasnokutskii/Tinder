@@ -13,7 +13,8 @@ class CardView: UIView{
         let iv = UIImageView()
         iv.backgroundColor = .blue
         iv.layer.cornerRadius = 10
-        iv.contentMode = .scaleToFill
+        iv.image = UIImage(named: "test-image")
+        iv.contentMode = .scaleAspectFill
         return iv
     }()
     
