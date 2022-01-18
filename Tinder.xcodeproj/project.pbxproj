@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D42B18532796A8AE00B95753 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42B18522796A8AD00B95753 /* CardView.swift */; };
 		D4A8466D278DB03800259C22 /* BottomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8466C278DB03800259C22 /* BottomUIView.swift */; };
 		D4A8466F278DBB3400259C22 /* UIImage - Extantion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8466E278DBB3400259C22 /* UIImage - Extantion.swift */; };
 		D4E9790F278D852A006DE7D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E9790E278D852A006DE7D7 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D42B18522796A8AD00B95753 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D4A8466C278DB03800259C22 /* BottomUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomUIView.swift; sourceTree = "<group>"; };
 		D4A8466E278DBB3400259C22 /* UIImage - Extantion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage - Extantion.swift"; sourceTree = "<group>"; };
 		D4E9790B278D852A006DE7D7 /* Tinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +56,7 @@
 		D4A8466A278DAFCF00259C22 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D42B18522796A8AD00B95753 /* CardView.swift */,
 				D4A8466C278DB03800259C22 /* BottomUIView.swift */,
 				D4FDF2B02790510A00A81B61 /* TopControlView.swift */,
 			);
@@ -194,6 +197,7 @@
 				D4A8466F278DBB3400259C22 /* UIImage - Extantion.swift in Sources */,
 				D4E97911278D852A006DE7D7 /* SceneDelegate.swift in Sources */,
 				D4A8466D278DB03800259C22 /* BottomUIView.swift in Sources */,
+				D42B18532796A8AE00B95753 /* CardView.swift in Sources */,
 				D4FDF2BA2790756700A81B61 /* UIView - extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
