@@ -39,12 +39,12 @@ class CardView: UIView{
     
     func setUpGradient(){
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-        gradientLayer.locations = [0.3, 1.1]
+        gradientLayer.locations = [0.5, 1.1]
         cardImageView.layer.addSublayer(gradientLayer)
     }
     
     override func layoutSubviews() {
-        gradientLayer.frame = self.frame
+        gradientLayer.frame = self.bounds
     }
     
     @objc private func panCardView(gesture: UIPanGestureRecognizer){
