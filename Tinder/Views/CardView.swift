@@ -10,6 +10,8 @@ import UIKit
 class CardView: UIView{
     
 
+    private let gradientLayer = CAGradientLayer()
+    //MARK: UIView
     private let cardImageView = CardImageView(frame: .zero)
     
     private let infoButton = UIButton(type: .custom).createInfoButton()
@@ -26,12 +28,23 @@ class CardView: UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpLayout()
+        setUpGradient()
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panCardView(gesture:)))
         self.addGestureRecognizer(panGesture)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setUpGradient(){
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradientLayer.locations = [0.3, 1.1]
+        cardImageView.layer.addSublayer(gradientLayer)
+    }
+    
+    override func layoutSubviews() {
+        gradientLayer.frame = self.frame
     }
     
     @objc private func panCardView(gesture: UIPanGestureRecognizer){

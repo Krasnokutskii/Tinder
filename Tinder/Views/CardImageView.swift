@@ -13,7 +13,7 @@ class CardImageView: UIImageView{
         super.init(frame: frame)
         backgroundColor = .blue
         layer.cornerRadius = 10
-        image = UIImage(named: "test-image")
+        image = UIImage(named: "test-image2")
         contentMode = .scaleAspectFill
         
     }
