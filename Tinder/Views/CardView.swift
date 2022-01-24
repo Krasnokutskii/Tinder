@@ -116,11 +116,9 @@ class CardView: UIView{
         let angle = degree * CGFloat.pi/180
        
         let rotationTranslation = CGAffineTransform(rotationAngle: angle)
-        //let appearRatio = 1/100
         if translation.x < 0{
             nopeLabel.alpha = -translation.x/100
-            print(nopeLabel.alpha)
-        }else {//if translation.x < 0
+        }else {
             goodLabel.alpha = translation.x/100
         }
         self.transform = rotationTranslation.translatedBy(x: translation.x, y: translation.y)
