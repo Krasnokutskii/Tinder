@@ -68,6 +68,7 @@ class CardView: UIView{
         label.layer.borderColor = UIColor.rgb(red: 137, green: 223, blue: 86).cgColor
         
         label.textAlignment = .center
+        label.alpha = 0
         return label
     }()
     
@@ -82,6 +83,7 @@ class CardView: UIView{
         label.layer.borderColor = UIColor.rgb(red: 222, green: 110, blue: 110).cgColor
         
         label.textAlignment = .center
+        label.alpha = 0
         return label
     }()
     
@@ -112,14 +114,26 @@ class CardView: UIView{
         
         let degree = translation.x / 10
         let angle = degree * CGFloat.pi/180
+       
         let rotationTranslation = CGAffineTransform(rotationAngle: angle)
+        //let appearRatio = 1/100
+        if translation.x < 0{
+            nopeLabel.alpha = -translation.x/100
+            print(nopeLabel.alpha)
+        }else {//if translation.x < 0
+            goodLabel.alpha = translation.x/100
+        }
         self.transform = rotationTranslation.translatedBy(x: translation.x, y: translation.y)
     }
+    
+    
     
     private func handlePanEnded(){
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: []) {
             self.transform = .identity
             self.layoutIfNeeded()
+            self.goodLabel.alpha = 0
+            self.nopeLabel.alpha = 0 
         }
 
     }
