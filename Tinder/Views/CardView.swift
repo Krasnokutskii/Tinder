@@ -9,87 +9,22 @@ import UIKit
 
 class CardView: UIView{
     
-    let cardImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.backgroundColor = .blue
-        iv.layer.cornerRadius = 10
-        iv.image = UIImage(named: "test-image")
-        iv.contentMode = .scaleAspectFill
-        return iv
-    }()
+
+    private let cardImageView = CardImageView(frame: .zero)
     
-    let nameLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 40, weight: .heavy)
-        label.text = "Rick 26"
-        return label
-    }()
+    private let infoButton = UIButton(type: .custom).createInfoButton()
     
-    let residenceLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 18, weight: .regular)
-        label.text = "Russia, Nizniy Novgorod"
-        return label
-    }()
-    let hobbyLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 20, weight: .regular)
-        label.text = "Movie, Cybersport, Language"
-        return label
-    }()
-    let introductionLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 20, weight: .regular)
-        label.text = "Hi,I'm really glad to be here"
-        return label
-    }()
+    private let introductionLabel = CardInfoLabel(frame: .zero, labelColor: .white, labelText: "Hi,I'm really glad to be here", labelFont: .systemFont(ofSize: 20, weight: .regular))
+    private let hobbyLabel = CardInfoLabel(frame: .zero, labelColor: .white, labelText: "Movie, Cybersport, Language", labelFont: .systemFont(ofSize: 20, weight: .regular))
+    private let residenceLabel = CardInfoLabel(frame: .zero, labelColor: .white, labelText: "Russia, Nizniy Novgorod", labelFont: .systemFont(ofSize: 18, weight: .regular))
+    private let nameLabel = CardInfoLabel(frame: .zero, labelColor: .white, labelText: "Rick 26", labelFont: .systemFont(ofSize: 40, weight: .regular))
+
+    private let goodLabel: UILabel = CardInfoLabel(frame: .zero, labelText: "GOOD", labelColor: UIColor.rgb(red: 137, green: 223, blue: 86) )
+    private let nopeLabel: UILabel = CardInfoLabel(frame: .zero, labelText: "NOPE", labelColor: UIColor.rgb(red: 222, green: 110, blue: 110))
     
-    let infoButton: UIButton = {
-        let button = UIButton(type: .custom)
-        let configuration = UIImage.SymbolConfiguration(pointSize: 40)
-        button.setImage(UIImage(systemName: "info.circle",withConfiguration: configuration), for: .normal)
-        button.tintColor = .white
-        button.imageView?.contentMode = .scaleAspectFit
-        return button
-    }()
-    
-    let goodLabel: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 45)
-        label.textColor = UIColor.rgb(red: 137, green: 223, blue: 86)
-        label.text = "GOOD"
-        
-        label.layer.borderWidth = 2
-        label.layer.cornerRadius = 10
-        label.layer.borderColor = UIColor.rgb(red: 137, green: 223, blue: 86).cgColor
-        
-        label.textAlignment = .center
-        label.alpha = 0
-        return label
-    }()
-    
-    let nopeLabel: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 45)
-        label.textColor = UIColor.rgb(red: 222, green: 110, blue: 110)
-        label.text = "NOPE"
-        
-        label.layer.borderWidth = 2
-        label.layer.cornerRadius = 10
-        label.layer.borderColor = UIColor.rgb(red: 222, green: 110, blue: 110).cgColor
-        
-        label.textAlignment = .center
-        label.alpha = 0
-        return label
-    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        //backgroundColor = .white
         setUpLayout()
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panCardView(gesture:)))
         self.addGestureRecognizer(panGesture)
@@ -150,9 +85,9 @@ class CardView: UIView{
         addSubview(nopeLabel)
         
         cardImageView.anchors(top: topAnchor, bottom: bottomAnchor, left: leftAnchor, right: rightAnchor, leftPudding: 10, rightPudding: 10)
-        nameLabel.anchors(bottom: basicHorizontalStack.topAnchor, left: cardImageView.leftAnchor, bottomPudding: 40, leftPudding: 20)
+        nameLabel.anchors(bottom: basicHorizontalStack.topAnchor, left: cardImageView.leftAnchor, bottomPudding: 40, leftPudding: 10)
         infoButton.anchors(width: 40)
-        basicHorizontalStack.anchors(bottom: cardImageView.bottomAnchor, left: cardImageView.leftAnchor, right: cardImageView.rightAnchor, bottomPudding: 20, leftPudding: 20, rightPudding: 20)
+        basicHorizontalStack.anchors(bottom: cardImageView.bottomAnchor, left: cardImageView.leftAnchor, right: cardImageView.rightAnchor, bottomPudding: 20, leftPudding: 10, rightPudding: 20)
         goodLabel.anchors(top: cardImageView.topAnchor, left: cardImageView.leftAnchor, topPudding: 20, leftPudding: 20)
         nopeLabel.anchors(top: cardImageView.topAnchor, right: cardImageView.rightAnchor, topPudding: 20, rightPudding: 20)
     }

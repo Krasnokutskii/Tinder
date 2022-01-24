@@ -22,6 +22,9 @@
 		D4FDF2B627905AC000A81B61 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = D4FDF2B527905AC000A81B61 /* RxRelay */; };
 		D4FDF2B827905AC000A81B61 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4FDF2B727905AC000A81B61 /* RxSwift */; };
 		D4FDF2BA2790756700A81B61 /* UIView - extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FDF2B92790756700A81B61 /* UIView - extension.swift */; };
+		F7278344279EE5F900E22950 /* CardInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7278343279EE5F900E22950 /* CardInfoLabel.swift */; };
+		F7278346279EEB8100E22950 /* UIButton - Extansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7278345279EEB8100E22950 /* UIButton - Extansion.swift */; };
+		F7278348279EED2800E22950 /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7278347279EED2800E22950 /* CardImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		D4E9791C278D852D006DE7D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4FDF2B02790510A00A81B61 /* TopControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopControlView.swift; sourceTree = "<group>"; };
 		D4FDF2B92790756700A81B61 /* UIView - extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView - extension.swift"; sourceTree = "<group>"; };
+		F7278343279EE5F900E22950 /* CardInfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoLabel.swift; sourceTree = "<group>"; };
+		F7278345279EEB8100E22950 /* UIButton - Extansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton - Extansion.swift"; sourceTree = "<group>"; };
+		F7278347279EED2800E22950 /* CardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,8 @@
 				D42B18522796A8AD00B95753 /* CardView.swift */,
 				D4A8466C278DB03800259C22 /* BottomUIView.swift */,
 				D4FDF2B02790510A00A81B61 /* TopControlView.swift */,
+				F7278343279EE5F900E22950 /* CardInfoLabel.swift */,
+				F7278347279EED2800E22950 /* CardImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -79,6 +87,7 @@
 				D4A8466E278DBB3400259C22 /* UIImage - Extantion.swift */,
 				D417509B2796E27800DC64BD /* UIColor- Extention.swift */,
 				D4FDF2B92790756700A81B61 /* UIView - extension.swift */,
+				F7278345279EEB8100E22950 /* UIButton - Extansion.swift */,
 			);
 			path = Extantion;
 			sourceTree = "<group>";
@@ -196,12 +205,15 @@
 			files = (
 				D417509C2796E27800DC64BD /* UIColor- Extention.swift in Sources */,
 				D4FDF2B12790510A00A81B61 /* TopControlView.swift in Sources */,
+				F7278346279EEB8100E22950 /* UIButton - Extansion.swift in Sources */,
+				F7278344279EE5F900E22950 /* CardInfoLabel.swift in Sources */,
 				D4E97913278D852A006DE7D7 /* MainViewController.swift in Sources */,
 				D4E9790F278D852A006DE7D7 /* AppDelegate.swift in Sources */,
 				D4A8466F278DBB3400259C22 /* UIImage - Extantion.swift in Sources */,
 				D4E97911278D852A006DE7D7 /* SceneDelegate.swift in Sources */,
 				D4A8466D278DB03800259C22 /* BottomUIView.swift in Sources */,
 				D42B18532796A8AE00B95753 /* CardView.swift in Sources */,
+				F7278348279EED2800E22950 /* CardImageView.swift in Sources */,
 				D4FDF2BA2790756700A81B61 /* UIView - extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
